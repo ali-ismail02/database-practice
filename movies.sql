@@ -1,0 +1,1 @@
+SELECT name,min(earnings_rank) as earnings_rank FROM `movie`;
