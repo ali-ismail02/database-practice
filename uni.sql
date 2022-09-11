@@ -15,3 +15,6 @@ SELECT m.student_id from enrolled as e , majorsln as m, department as d , course
 
 -- Find the number of CS students enrolled in any course
 SELECT count(m.student_id) FROM majorsln as m, department as d where d.id = m.dept_id and d.name = 'CS' and m.student_id in (SELECT student_id from enrolled)
+
+-- Find the number of majors that each student has declared
+select m.student_id, COUNT(m.dept_id) from majorsln as m GROUP BY m.student_id
