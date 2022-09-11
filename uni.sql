@@ -9,3 +9,7 @@ SELECT c.name FROM `course` as c, majorsln as m , enrolled as e , department as 
 
 -- Create a list of all students who are not enrolled in a course
 SELECT id from student where id not in (SELECT student_id FROM enrolled)
+
+-- Find the number of CS students enrolled in CSC275
+SELECT m.student_id from enrolled as e , majorsln as m, department as d , course as c where d.name = 'CS' and d.id = m.dept_id and e.student_id = m.student_id and c.name = 'CSC275' and c.crn = e.Course_crn
+
